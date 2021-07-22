@@ -17,12 +17,6 @@ if (!process.browser) {
 }
 
 function create(initialState, ctx) {
-  console.log(
-    'CURRENT URL',
-    getCurrentDomain(),
-    GRAPHQL_ENDPOINT || `${getCurrentDomain()}/api/graphql`,
-  );
-  
   const remoteAddress = ctx?.req?.connection?.remoteAddress;
   const httpLink = new HttpLink({
     uri: GRAPHQL_ENDPOINT || `${getCurrentDomain()}/api/graphql`,
